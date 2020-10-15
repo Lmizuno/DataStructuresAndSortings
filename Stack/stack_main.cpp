@@ -2,49 +2,83 @@
 Author: Luis Mizuno
 Date: 2020.10.01
 */
-//push and pop control data
-/*
-push
-pop
-get size
-is Empty
-clear
-*/
+
 #include <iostream>
+
 using namespace std;
 
+//Simple Stack based on Arrays
+//Data structure demonstration
 class Stack {
 public:
-	static const int sizeOfStack = 10;
-	int topOfStack = 0;
+	
+
+	static const int sizeOfStack = 100;
+	int topOfStack = -1;
 	int theData[sizeOfStack];
 
 	
 	void push(int newValue) {
+		if (topOfStack > sizeOfStack - 1) {
+			cout << "Stack overflow" << endl;
+			return;
+		}
+		
 
-		theData[topOfStack] = newValue;
-		topOfStack++;
+		
+		theData[++topOfStack] = newValue;
+		
 	}
 	void pop(void) {
-		if (topOfStack >= 0)
-			topOfStack--;
-		else
-			std::cout << "Stack has no more data in it\n";
-	}
+		if (topOfStack <= -1) {
+			cout << "Stack underflow" << endl;
+			return;
+		}
 
+		cout << "Poped element: " << theData[topOfStack] << endl;
+		topOfStack--;
+	}
+	int getSize(void) {
+		return topOfStack + 1;
+	}
+	bool is_empty(void) {
+		return !(topOfStack > -1);
+	}
+	void clear(void) {
+		topOfStack = -1;
+	}
 	int peek(void) {
-		return theData[topOfStack - 1];
+		if (topOfStack >= 0) {
+			return theData[topOfStack];
+		}
+		else {
+			cout << "Stack is empty" << endl;
+		}
 	}
 };
 
 
 int main() {
-	//Stack myStack;
-	char c[] = { 's', 'a' };
-	char* p = c;
-	char* q = &c[0];
-	std::cout << c[1] << p[1] << q[1];
+	
 
+	Stack myS;
+
+	myS.push(1);
+	myS.push(4);
+	myS.push(5);
+	myS.push(6);
+
+	cout << "Is Empty? " << myS.is_empty() << endl;
+	cout << "Get size of stack: " << myS.getSize() << endl;
+	cout << "Peek top of stack: " << myS.peek() << endl;
+	cout << "Pop 1: ";
+	myS.pop();
+	cout << "Peek top of stack: " << myS.peek() << endl;
+	cout << "Get size of stack: " << myS.getSize() << endl;
+	
+	cout << "clear..." << endl;
+	myS.clear();
+	cout << "Is Empty? " << myS.is_empty() << endl;
 	return 0;
 
 }
