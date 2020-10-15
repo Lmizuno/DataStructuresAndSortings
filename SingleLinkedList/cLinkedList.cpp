@@ -13,10 +13,32 @@ cLinkedList::~cLinkedList() {
 
 //inset to begin/head
 void cLinkedList::InsertAtHead(cPerson thePerson) {
-
+	if (this->pCurrentNode == NULL) { 
+		//no nodes, then insert first
+		this->pCurrentNode = new cNode;
+		this->pFirstNode = this->pCurrentNode;
+		this->pLastNode = this->pCurrentNode;
+		this->pCurrentNode->thePerson = thePerson;
+	}
+	cNode *temp = new cNode;
+	temp->thePerson = thePerson;
+	temp->pNextNode = this->pFirstNode;
+	this->pFirstNode = temp;
 }
 //insert to tail/end
 void cLinkedList::AddToTail(cPerson thePerson) {
+
+	if (this->pCurrentNode == NULL) {
+		//no nodes, then insert first
+		this->pCurrentNode = new cNode;
+		this->pFirstNode = this->pCurrentNode;
+		this->pLastNode = this->pCurrentNode;
+		this->pCurrentNode->thePerson = thePerson;
+	}
+	cNode* temp = new cNode;
+	temp->thePerson = thePerson;
+	this->pLastNode->pNextNode = temp;
+	this->pLastNode = temp;
 }
 //insert at current location
 void cLinkedList::Insert(cPerson thePersonToInsert) {
@@ -40,22 +62,29 @@ void cLinkedList::Insert(cPerson thePersonToInsert) {
 
 
 		cNode* tempNode = new cNode;
-
 		tempNode->thePerson = thePersonToInsert;
 
-		this->pCurrentNode->pNextNode = tempNode;
-
+		if (this->pCurrentNode->pNextNode == NULL) { //is at head
+			this->pCurrentNode->pNextNode = tempNode;
+			this->pLastNode = tempNode;
+			
+		}
+		else {
+			tempNode->pNextNode = this->pCurrentNode->pNextNode;
+			this->pCurrentNode->pNextNode = tempNode;
+			
+		}
 		this->pCurrentNode = tempNode;
-		this->pLastNode = tempNode;
+
 	}
-
-	
-
 }			
 
 bool cLinkedList::MoveNext(void) {
+	if (this->pCurrentNode->pNextNode == NULL)
+		return false;
+
 	this->pCurrentNode = this->pCurrentNode->pNextNode;
-	return false;
+	return true;
 }
 void cLinkedList::MoveToHead(void) {
 	this->pCurrentNode = this->pFirstNode;
