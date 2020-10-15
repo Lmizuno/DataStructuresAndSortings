@@ -24,8 +24,6 @@ public:
 			return;
 		}
 		
-
-		
 		theData[++topOfStack] = newValue;
 		
 	}
