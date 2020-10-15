@@ -42,7 +42,7 @@ cPerson cSmartArray2::Pop(void) {
 unsigned int cSmartArray2::getSize(void)
 {
 	//current amoutn
-	return this->m_NextItemIndex - 1;
+	return this->m_NextItemIndex ;
 
 }
 unsigned int cSmartArray2::getCapacity(void)
@@ -74,22 +74,5 @@ void cSmartArray2::m_Resize(void) {
 
 }
 
-
-void DoesNothing(void) {
-	
-	
-
-	int x[12] = { 0 };		// static at stack
-	int* px = new int[12];	// dynamic allocated at heap at runtime
-
-	cPerson* myPeopleArray = 0; //when it's a pointer and you dont want to initialize yet you must set it to null
-	
-	myPeopleArray = new cPerson[10];	//creates a new block of memory 
-	myPeopleArray = new cPerson[20];	//creates a new block of memory and forgets about the old 
-	//dangerous, we lost control of the memory the pointer pointed to before this
-	
-
-	//what should be done is REALLOC
-}
 
 

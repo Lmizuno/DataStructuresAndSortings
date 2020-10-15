@@ -21,38 +21,74 @@ Clear()
 #include <vector> //aka. "smart array"
 #include "cPerson.h"
 #include "cSmartArray.h"
+#include "cSmartArray2.h"
 using namespace std;
 
+struct myStruct {
+	int a;
+	int b;
+	string c;
+};
 
 int main() {
-	std::vector<cPerson> vecPeople;
-	cPerson Bob; //" Stack based variable" 
+
+	//=====Stack based variables=====
+	std::vector<myStruct> vecStruct;
+
+	myStruct s1;
+	s1.a = 10;
+	s1.b = 13;
+	s1.c = "Bob";
+	vecStruct.push_back(s1);
+
+	s1.c = "London";//will change s1 but not vecStruct()
+	//vecStruct[s1] is a copy of s1
+
+	
+	cout <<"Changed: " << s1.c << endl;
+	cout <<"Not changed: "<< vecStruct[0].c << endl;
+	
+	
+	//======using heap based variables ===== 
+	std::vector<myStruct*> vec_pStruct;
+
+	myStruct* pS2 = new myStruct;
+	pS2->a = 123;
+	pS2->b = 15;
+	pS2->c = "Joe";
+	
+	// copies the pointer and then bob is now a reference instead of a copy
+	vec_pStruct.push_back(pS2); 
+
+	pS2->c = "Mike"; //changed
+
+	cout << pS2->c << endl;
+	cout << vec_pStruct[0]->c << endl;
+
+	//=========personal smart array=========
+	//it can resize!!
+	cPerson Bob;
 	Bob.first = "Bob";
-	Bob.last = "Smith";
-	Bob.age = 20;
-	Bob.gender = cPerson::MALE;
-
-	vecPeople.push_back(Bob);
-
-	Bob.city = "London";//will change Bob but not vecPeople(bob)
-	//vecPeople Bob is a copy of Bob
+	cPerson Joe;
+	Joe.first = "Joe";
 
 
-	//======using heap based variable
 
-	std::vector<cPerson*> vec_pPeople;
-
-	cPerson* pBob = new cPerson();
-	pBob->first = "Bob";
-	pBob->last = "Smith";
-	pBob->age = 20;
-	pBob->gender = cPerson::MALE;
-
-	vec_pPeople.push_back(pBob); // copies the pointer and then bob is now a reference instead of a copy
-
-	pBob->city = " London";
-
-	//=========personal smart array
-	cSmartArray saPeople;
+	cSmartArray2 saPeople;
+	cout << "==Smart array 2==" << endl;
 	saPeople.Push(Bob);
+	saPeople.Push(Joe);
+	saPeople.Push(Bob);
+	saPeople.Push(Joe);
+	saPeople.Push(Bob);
+	saPeople.Push(Joe);
+	saPeople.Push(Bob);
+	saPeople.Push(Joe);
+
+	int sizeOfPeople = saPeople.getSize();
+
+	cout << "Size of People: " << sizeOfPeople << endl;
+	for (int i = 0; i < sizeOfPeople; i++) {
+		cout << saPeople.Pop().first << endl;
+	}
 }

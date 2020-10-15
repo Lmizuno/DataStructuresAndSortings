@@ -24,7 +24,7 @@ public:
 
 	unsigned int getSize(void);
 
-	unsigned int getCapacity(void);
+	unsigned int getCapacity(void); //Capacity changes
 
 	//TO THINK:
 	//Non exception error conditions
@@ -40,7 +40,7 @@ private:
 	//Location of the next item to be added
 	unsigned int m_NextItemIndex; // = 0
 
-	static const unsigned int INITIALARRAYSIZE = 10;
+	static const unsigned int INITIALARRAYSIZE = 5;
 	unsigned int m_currentArraySize = INITIALARRAYSIZE;
 
 	//Actual data

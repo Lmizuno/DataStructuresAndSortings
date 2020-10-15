@@ -32,9 +32,9 @@ public:
 
 private:
 	//Location of the next item to be added
-	unsigned int m_NextItemIndex; // = 0
+	unsigned int m_NextItemIndex = -1; // = 0
 
-	static const unsigned int ARRAYSIZE = 10;
+	static const unsigned int ARRAYSIZE = 100;
 
 	//Actual data
 	cPerson m_PeopleArray[ARRAYSIZE];
