@@ -12,36 +12,36 @@ cLinkedList::~cLinkedList() {
 }
 
 //inset to begin/head
-void cLinkedList::InsertAtHead(cPerson thePerson) {
+void cLinkedList::InsertAtHead(cCity theCity) {
 	if (this->pCurrentNode == NULL) { 
 		//no nodes, then insert first
 		this->pCurrentNode = new cNode;
 		this->pFirstNode = this->pCurrentNode;
 		this->pLastNode = this->pCurrentNode;
-		this->pCurrentNode->thePerson = thePerson;
+		this->pCurrentNode->theCity = theCity;
 	}
 	cNode *temp = new cNode;
-	temp->thePerson = thePerson;
+	temp->theCity = theCity;
 	temp->pNextNode = this->pFirstNode;
 	this->pFirstNode = temp;
 }
 //insert to tail/end
-void cLinkedList::AddToTail(cPerson thePerson) {
+void cLinkedList::AddToTail(cCity theCity) {
 
 	if (this->pCurrentNode == NULL) {
 		//no nodes, then insert first
 		this->pCurrentNode = new cNode;
 		this->pFirstNode = this->pCurrentNode;
 		this->pLastNode = this->pCurrentNode;
-		this->pCurrentNode->thePerson = thePerson;
+		this->pCurrentNode->theCity = theCity;
 	}
 	cNode* temp = new cNode;
-	temp->thePerson = thePerson;
+	temp->theCity = theCity;
 	this->pLastNode->pNextNode = temp;
 	this->pLastNode = temp;
 }
 //insert at current location
-void cLinkedList::Insert(cPerson thePersonToInsert) {
+void cLinkedList::Insert(cCity theCityToInsert) {
 
 	//is this the first insert?
 	if (this->pCurrentNode == NULL) { //== null == 0
@@ -49,11 +49,11 @@ void cLinkedList::Insert(cPerson thePersonToInsert) {
 		this->pCurrentNode = new cNode;
 		this->pFirstNode = this->pCurrentNode;
 		this->pLastNode = this->pCurrentNode;
-		this->pCurrentNode->thePerson = thePersonToInsert;
+		this->pCurrentNode->theCity = theCityToInsert;
 	}
 	else
 	{
-		//TODO: 
+	
 	// make new node
 	// put the person at that node
 	// connect the current node to this new node
@@ -62,7 +62,7 @@ void cLinkedList::Insert(cPerson thePersonToInsert) {
 
 
 		cNode* tempNode = new cNode;
-		tempNode->thePerson = thePersonToInsert;
+		tempNode->theCity = theCityToInsert;
 
 		if (this->pCurrentNode->pNextNode == NULL) { //is at head
 			this->pCurrentNode->pNextNode = tempNode;

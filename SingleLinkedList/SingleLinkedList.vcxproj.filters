@@ -16,27 +16,24 @@
     <Filter Include="LinkedLists">
       <UniqueIdentifier>{62f3f3ed-87c2-4ee4-93a2-f4953ca2feec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="cPerson">
-      <UniqueIdentifier>{f6786c3a-43f6-45c0-addf-5cd94a9540f3}</UniqueIdentifier>
+    <Filter Include="cCity">
+      <UniqueIdentifier>{094286dd-4ed9-4014-92d0-724015f3af1c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cNode.h">
       <Filter>LinkedLists</Filter>
     </ClInclude>
-    <ClInclude Include="cPerson.h">
-      <Filter>cPerson</Filter>
-    </ClInclude>
     <ClInclude Include="cLinkedList.h">
       <Filter>LinkedLists</Filter>
+    </ClInclude>
+    <ClInclude Include="cCity.h">
+      <Filter>cCity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SingleLinkedList_main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cPerson.cpp">
-      <Filter>cPerson</Filter>
     </ClCompile>
     <ClCompile Include="cNode.cpp">
       <Filter>LinkedLists</Filter>

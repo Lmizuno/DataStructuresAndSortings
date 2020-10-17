@@ -12,10 +12,10 @@ public:
 	cNode* pLastNode;
 	cNode* pCurrentNode;
 
-	void InsertAtHead(cPerson thePersonToInsert);
-	void AddToTail(cPerson thePersonToInsert);
+	void InsertAtHead(DataExample thePersonToInsert);
+	void AddToTail(DataExample thePersonToInsert);
 	
-	void Insert(cPerson thePersonToInsert);
+	void Insert(DataExample thePersonToInsert);
 
 	bool MovePrevious(void);
 	bool MoveNext(void);

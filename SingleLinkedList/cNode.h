@@ -2,15 +2,14 @@
 #ifndef _cNode_HG_
 #define _cNode_HG_
 
-#include "cPerson.h"
+#include "cCity.h"
+
 class cNode {
 public:
-	cNode() {
-		this->pNextNode = NULL;
-	}
+	cNode();
 	~cNode();
 
-	cPerson thePerson;
+	cCity theCity;
 	cNode* pNextNode;
 };
 #endif // !_cNode_HG_

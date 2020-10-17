@@ -144,13 +144,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cPerson.cpp" />
     <ClCompile Include="double_LL.cpp" />
     <ClCompile Include="Double_LL_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cNode.h" />
-    <ClInclude Include="cPerson.h" />
+    <ClInclude Include="DataExample.h" />
     <ClInclude Include="double_LL.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

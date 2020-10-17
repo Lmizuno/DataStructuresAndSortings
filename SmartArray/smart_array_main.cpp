@@ -22,13 +22,10 @@ Clear()
 #include "cPerson.h"
 #include "cSmartArray.h"
 #include "cSmartArray2.h"
+#include "myStruct.h"
 using namespace std;
 
-struct myStruct {
-	int a;
-	int b;
-	string c;
-};
+
 
 int main() {
 
@@ -67,10 +64,10 @@ int main() {
 
 	//=========personal smart array=========
 	//it can resize!!
-	cPerson Bob;
-	Bob.first = "Bob";
-	cPerson Joe;
-	Joe.first = "Joe";
+	myStruct Bob;
+	Bob.c = "Bob";
+	myStruct Joe;
+	Joe.c = "Joe";
 
 
 
@@ -89,6 +86,6 @@ int main() {
 
 	cout << "Size of People: " << sizeOfPeople << endl;
 	for (int i = 0; i < sizeOfPeople; i++) {
-		cout << saPeople.Pop().first << endl;
+		cout << saPeople.Pop().c << endl;
 	}
 }

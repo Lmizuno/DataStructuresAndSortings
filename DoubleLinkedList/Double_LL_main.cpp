@@ -1,26 +1,37 @@
+/*
+Author: Luis Mizuno
+Date: 2020-10-11
+File: Double_LL_main.cpp
+Purpose:
+
+*/
 #include <iostream>
-#include "cPerson.h"
+#include "DataExample.h"
 #include "double_LL.h"
+
+
+
 int main() {
 	cDouble_LL d_LL;
 
-	cPerson p1 = cPerson();
-	p1.first = "Mary";
+	DataExample Mary;
+	Mary.a = "Mary";
 	
-	cPerson p2 = cPerson();
-	p2.first = "Joe";
-	
-	cPerson p3 = cPerson();
-	p3.first = "Brit";
+	DataExample Joe;
+	Joe.a = "Joe";
+
+	DataExample Bob;
+	Bob.a = "Bob";
+
 	
 
-	d_LL.InsertAtHead(p1);	// p1
-	d_LL.InsertAtHead(p2);	// p2 p1
-	d_LL.InsertAtHead(p3);	// p3 p2 p1
+	d_LL.InsertAtHead(Mary);	// M
+	d_LL.InsertAtHead(Joe);		// J M
+	d_LL.InsertAtHead(Bob);		// B J M
 
 	d_LL.MoveToHead();
 	for (int i = 1; i < 4; i++) {
-		std::cout << "<Person" << i << ": " << d_LL.pCurrentNode->thePerson.first << "> ";
+		std::cout << "<Data[" << i << "]: " << d_LL.pCurrentNode->data.a << "> ";
 		d_LL.MoveNext();
 	}
 

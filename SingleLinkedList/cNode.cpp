@@ -1,7 +1,6 @@
 #include "cNode.h"
 
-//cNode::cNode() {
-//	this->pNextNode = NULL;
-//	
-//}
+cNode::cNode() {
+	this->pNextNode = NULL;
+}
 

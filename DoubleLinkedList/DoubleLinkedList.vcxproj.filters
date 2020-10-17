@@ -13,33 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="cPerson">
-      <UniqueIdentifier>{26a27b76-f51b-40cb-96f4-7d931acde94b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="doubleLL">
       <UniqueIdentifier>{e3b6df16-2e11-4c47-83f5-0dfd38166521}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataExample">
+      <UniqueIdentifier>{dc7a73c1-47e2-44ce-9bc7-8acd2c9bac9a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Double_LL_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cPerson.cpp">
-      <Filter>cPerson</Filter>
-    </ClCompile>
     <ClCompile Include="double_LL.cpp">
       <Filter>doubleLL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cPerson.h">
-      <Filter>cPerson</Filter>
-    </ClInclude>
     <ClInclude Include="double_LL.h">
       <Filter>doubleLL</Filter>
     </ClInclude>
     <ClInclude Include="cNode.h">
       <Filter>doubleLL</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExample.h">
+      <Filter>DataExample</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

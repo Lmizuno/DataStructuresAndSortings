@@ -2,11 +2,11 @@
 #ifndef _cNode_HG_
 #define _cNode_HG_
 
-#include "cPerson.h"
+#include "DataExample.h"
 class cNode {
 public:
 
-	cPerson thePerson;
+	DataExample data;
 	cNode* pNextNode;
 	cNode* pPrevNode;
 

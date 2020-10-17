@@ -6,8 +6,8 @@
 
 
 //Smart array just for cPeople objs
-#include "cPerson.h"
 
+#include "myStruct.h"
 
 class cSmartArray 
 {
@@ -17,9 +17,9 @@ public:
 	cSmartArray();
 	~cSmartArray();
 	
-	void Push(cPerson thePerson); //push back, push to the end/tail
+	void Push(myStruct mStruct); //push back, push to the end/tail
 	
-	cPerson Pop(void); //get data from the end/tail
+	myStruct Pop(void); //get data from the end/tail
 	
 	unsigned int getSize(void);
 	
@@ -37,7 +37,7 @@ private:
 	static const unsigned int ARRAYSIZE = 100;
 
 	//Actual data
-	cPerson m_PeopleArray[ARRAYSIZE];
+	myStruct m_Struct_Array[ARRAYSIZE];
 
 };
 
